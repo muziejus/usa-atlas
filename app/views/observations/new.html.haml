@@ -1,0 +1,24 @@
+- content_for :title do
+  New observation
+  
+= form_for @observation do |f|
+  .section
+    %h2
+      Observation info
+    .subsection
+      %label
+        Text
+      .value
+        = f.text_area :text
+      %label
+        Place
+      .value
+        = f.text_field :place
+      %label
+        Dialogue?
+      .value
+        = f.check_box :dialogue
+      .clear
+    .clear
+  .section_form_controls
+    = f.submit "Save observation!"
