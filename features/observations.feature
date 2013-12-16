@@ -9,7 +9,6 @@ Feature: Observations
     When I create a new observation
     Then that new observation will be saved
     
-  @wip
   Scenario: Create a new observation with a new place
     Given observations exist
     And places exist
@@ -17,3 +16,11 @@ Feature: Observations
     When I create a new observation with the text "A street in Mexico" and place "mexico"
     Then there will be a place called "mexico" and it will have a variant called "mexico"
     And the observation will have for its "place_id" the id of "mexico"
+    
+  @wip
+  Scenario: Create a new observation with an old place
+    Given observations exist
+    And places exist
+    And there is a place called "mexico"
+    When I create a new observation with the text "A street in Mexico" and place "mexico"
+    Then the observation will have for its "place_id" the id of "mexico"
