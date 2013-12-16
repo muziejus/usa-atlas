@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+modes = Mode.create([{name: 'Newsreel'}, {name: 'Narrative'}, {name: 'Camera Eye'}, {name: 'Profile'}])

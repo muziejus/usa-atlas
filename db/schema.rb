@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216181513) do
+ActiveRecord::Schema.define(version: 20131216232620) do
+
+  create_table "modes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "observations", force: true do |t|
     t.text     "text"
@@ -20,6 +26,14 @@ ActiveRecord::Schema.define(version: 20131216181513) do
     t.datetime "updated_at"
     t.integer  "place_id"
     t.string   "place_name"
+    t.integer  "page_id"
+    t.integer  "mode_id"
+  end
+
+  create_table "pages", force: true do |t|
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "places", force: true do |t|

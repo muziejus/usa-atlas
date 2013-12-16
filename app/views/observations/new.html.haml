@@ -7,17 +7,27 @@
       Observation info
     .subsection
       %label
+        Mode
+      .value
+        =f.select :mode_id, options_for_select( list_modes, Observation.last.mode_id)
+      %label
         Text
       .value
         = f.text_area :text
+    = fields_for :place do |place|
       %label
         Place
       .value
-        = f.text_field :place_name
+        = place.text_field :name
+    = fields_for :page do |page|
+      %label
+        Page number
+      .value
+        = page.text_field :number, value: Page.find(Observation.last.page_id).number
       %label
         Dialogue?
       .value
-        = f.check_box :dialogue
+        = f.check_box :dialogue, value: Observation.last.dialogue
       .clear
     .clear
   .section_form_controls
