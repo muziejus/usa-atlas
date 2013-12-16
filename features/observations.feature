@@ -4,8 +4,16 @@ Feature: Observations
   As a person eager to do data entry
   I want to have an object called Observation
   
-  @wip
   Scenario: Create a new observation
     Given observations exist
     When I create a new observation
     Then that new observation will be saved
+    
+  @wip
+  Scenario: Create a new observation with a new place
+    Given observations exist
+    And places exist
+    And there is no place called "mexico"
+    When I create a new observation with the text "A street in Mexico" and place "mexico"
+    Then there will be a place called "mexico" and it will have a variant called "mexico"
+    And the observation will have for its "place_id" the id of "mexico"

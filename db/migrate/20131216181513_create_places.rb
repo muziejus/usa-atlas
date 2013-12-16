@@ -8,6 +8,8 @@ class CreatePlaces < ActiveRecord::Migration
       t.timestamps
     end
     
+    remove_column :observations, :place
     add_column :observations, :place_id, :integer
+    add_column :observations, :place_name, :string
   end
 end
