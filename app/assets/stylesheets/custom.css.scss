@@ -26,6 +26,12 @@ textarea {
   margin-bottom: 10px;
 }
 
+/* autocomplete */
+/* This showes up rather uselessly on the form, so I'm just hiding it. */
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

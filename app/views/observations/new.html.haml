@@ -1,36 +1,45 @@
 = provide(:title, "New Observation")
   
-.center.hero-unit
-  = form_for @observation do |f|
-    %h1
+.hero-unit
+  = form_for @observation, html: { class: "form-horizontal" } do |f|
+    %legend
       New Observation
-      %label
+    .control-group
+      %label.control-label
         Mode
-      .value
+      .controls
         =f.select :mode_id, options_for_select( list_modes, Observation.last.mode_id)
-      %label
+    .control-group
+      = fields_for :page do |page|
+        %label.control-label
+          Page number
+        .controls
+          = page.text_field :number, value: Page.find(Observation.last.page_id).number
+    .control-group
+      %label.control-label
         Text
-      .value
+      .controls
         = f.text_area :text
-      %label
+    .control-group
+      %label.control-label
         Place name in text
-      .value
+      .controls
         = f.text_field :place_name_in_text
     = fields_for :place do |place|
-      %label
-        Canonical place name
-      .value
-        = place.autocomplete_field :name, autocomplete_place_name_observations_path
-    = fields_for :page do |page|
-      %label
-        Page number
-      .value
-        = page.text_field :number, value: Page.find(Observation.last.page_id).number
-      %label
-        Dialogue?
-      .value
-        = f.check_box :dialogue, value: Observation.last.dialogue
-      .clear
-    .clear
-    .section_form_controls
-      = f.submit "Save observation!"
+      .control-group
+        %label.control-label
+          Canonical place name
+        .controls
+          = place.autocomplete_field :name, autocomplete_place_name_observations_path
+      .control-group
+        %label.control-label
+          Geocoding notes
+        .controls
+          = place.text_area :geocoding_notes
+    .control-group
+      .controls
+        %label.checkbox
+          = f.check_box :dialogue, value: Observation.last.dialogue
+          Dialogue?
+    .center
+      = f.submit "Save observation!", class: "btn"
