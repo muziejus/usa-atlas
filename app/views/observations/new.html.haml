@@ -1,10 +1,9 @@
 = provide(:title, "New Observation")
   
-= form_for @observation do |f|
-  .section
-    %h2
-      Observation info
-    .subsection
+.center.hero-unit
+  = form_for @observation do |f|
+    %h1
+      New Observation
       %label
         Mode
       .value
@@ -33,5 +32,5 @@
         = f.check_box :dialogue, value: Observation.last.dialogue
       .clear
     .clear
-  .section_form_controls
-    = f.submit "Save observation!"
+    .section_form_controls
+      = f.submit "Save observation!"
