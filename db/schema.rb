@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216232620) do
+ActiveRecord::Schema.define(version: 20131217092741) do
 
   create_table "modes", force: true do |t|
     t.string   "name"
@@ -21,13 +21,16 @@ ActiveRecord::Schema.define(version: 20131216232620) do
 
   create_table "observations", force: true do |t|
     t.text     "text"
-    t.boolean  "dialogue",   default: false
+    t.boolean  "dialogue",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "place_id"
     t.string   "place_name"
     t.integer  "page_id"
     t.integer  "mode_id"
+    t.integer  "chapter_id"
+    t.integer  "book_id"
+    t.string   "place_name_in_text"
   end
 
   create_table "pages", force: true do |t|

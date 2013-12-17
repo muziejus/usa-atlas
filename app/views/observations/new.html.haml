@@ -13,9 +13,13 @@
         Text
       .value
         = f.text_area :text
+      %label
+        Place name in text
+      .value
+        = f.text_field :place_name_in_text
     = fields_for :place do |place|
       %label
-        Place
+        Canonical place name
       .value
         = place.text_field :name
     = fields_for :page do |page|
