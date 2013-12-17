@@ -14,7 +14,9 @@ UsaAtlas::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :observations
+  resources :observations do
+    get :autocomplete_place_name, :on => :collection
+  end
 
   # Example resource route with options:
   #   resources :products do

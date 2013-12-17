@@ -21,7 +21,7 @@
       %label
         Canonical place name
       .value
-        = place.text_field :name
+        = place.autocomplete_field :name, autocomplete_place_name_observations_path
     = fields_for :page do |page|
       %label
         Page number

@@ -1,4 +1,5 @@
 class ObservationsController < ApplicationController
+  autocomplete :place, :name, full: true
 
   def index
   end
