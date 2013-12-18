@@ -1,3 +1,3 @@
 class Profile < ActiveRecord::Base
-  belongs_to :mode
+  belongs_to :chapter
 end
