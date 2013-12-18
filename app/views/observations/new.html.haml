@@ -17,6 +17,11 @@
           = page.text_field :number, value: Page.find(Observation.last.page_id).number
     .control-group
       %label.control-label
+        Order in page
+      .controls
+        = f.text_field :order_in_page, value: Observation.last.order_in_page + 1
+    .control-group
+      %label.control-label
         Text
       .controls
         = f.text_area :text
@@ -41,5 +46,21 @@
         %label.checkbox
           = f.check_box :dialogue, value: Observation.last.dialogue
           Dialogue?
+    .control-group
+      .controls
+        %label.checkbox
+          = f.check_box :adjective, value: Observation.last.adjective
+          Adjective? (like "French puppy")
+    .control-group
+      .controls
+        %label.checkbox
+          = f.check_box :not_a_place, value: Observation.last.not_a_place      
+          Not a place? (Like USS Lusitania)
+    .control-group
+      .controls
+        %label.control-label
+          Observation notes
+        .controls
+          = f.text_area :notes
     .center
       = f.submit "Save observation!", class: "btn"

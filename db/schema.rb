@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217133120) do
+ActiveRecord::Schema.define(version: 20131217161245) do
+
+  create_table "books", force: true do |t|
+    t.string   "name"
+    t.integer  "first_page"
+    t.integer  "last_page"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chapters", force: true do |t|
+    t.string   "name"
+    t.string   "subhead"
+    t.integer  "first_page"
+    t.integer  "last_page"
+    t.integer  "book_id"
+    t.integer  "mode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "modes", force: true do |t|
     t.string   "name"
@@ -31,6 +50,10 @@ ActiveRecord::Schema.define(version: 20131217133120) do
     t.integer  "chapter_id"
     t.integer  "book_id"
     t.string   "place_name_in_text"
+    t.boolean  "adjective",          default: false
+    t.boolean  "not_a_place",        default: false
+    t.text     "notes"
+    t.integer  "order_in_page"
   end
 
   create_table "pages", force: true do |t|
@@ -47,6 +70,14 @@ ActiveRecord::Schema.define(version: 20131217133120) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "geocoding_notes"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "historical_name"
+    t.string   "wikipedia_url"
+    t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -13,9 +13,9 @@ class ObservationsController < ApplicationController
     @page = Page.find_or_create_by(number: params[:page][:number].to_i)
     @place = Place.find_or_create_by(name: params[:place][:name].downcase)
 #     @place.add_variants(@observation.place_name_in_text)
+#     @place.add_geocoding_notes(params[:place][:geocoding_notes])
     @observation.place_id = @place.id
     @observation.page_id = @page.id
-#     @observation.book_id = some_method
 #     @observation.chapter_id = some_method
     respond_to do |format|
       if @observation.save
@@ -30,7 +30,8 @@ class ObservationsController < ApplicationController
 
   private
     def observation_params
-      params.require(:observation).permit(:text, :place_name_in_text, :mode_id, :dialogue)
+      params.require(:observation).permit(:text, :place_name_in_text, :mode_id, 
+        :dialogue, :adjective, :not_a_place, :notes, :order_in_page)
     end
 
 end
