@@ -19,7 +19,7 @@
       %label.control-label
         Order in page
       .controls
-        = f.text_field :order_in_page, value: Observation.last.order_in_page + 1
+        = f.text_field :order_in_page, value: Observation.last.order_in_page + 1 unless Observation.last.order_in_page.nil?
     .control-group
       %label.control-label
         Text
