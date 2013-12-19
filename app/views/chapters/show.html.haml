@@ -1,0 +1,26 @@
+= provide(:title, "Geographical Observations for Chapter #{@chapter.id}, “#{@chapter.name}”")
+
+%p
+  Here are some observations:
+
+%table.table.table-hover.table-striped#observations
+  %thead
+    %th
+      Place
+    %th
+      Page
+    %th
+      Text
+    %th
+      Feature Type
+  %tbody
+    - @observations.each do |observation|
+      %tr
+        %td
+          = Place.find(observation.place_id).name
+        %td
+          = Page.fine(observation.page_id).number
+        %td
+          = observation.text
+        %td
+          = "Feat."

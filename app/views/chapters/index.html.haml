@@ -1,0 +1,27 @@
+= provide(:title, "Chapters")
+
+%table.table.table-hover.table-striped#chapters
+  %thead
+    %th
+      Name
+    %th
+      Observations
+    %th
+      First page
+    %th
+      Length
+  %tbody
+    - @chapters.each do |chapter|
+      %tr
+        %td
+          = name_of chapter
+          - unless chapter.mode_id == 2
+            %small
+              = surround "(", ")" do
+                = ancillary_info_for chapter
+        %td
+          = observations_in chapter
+        %td
+          = first_page_of chapter
+        %td
+          = pages_in chapter

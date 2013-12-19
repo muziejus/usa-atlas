@@ -256,7 +256,7 @@ Chapter.where(book_id: nil).each do |row|
   row.save
 end
 
-Profile.create([
+profiles = Profile.create([
   {id: 1, chapter_id: 1, historical_name: "Young American", wikipedia_url: ""},
   {id: 2, chapter_id: 9, historical_name: "Eugene Debs", wikipedia_url: "http://en.wikipedia.org/wiki/Eugene_V._Debs"},
   {id: 3, chapter_id: 20, historical_name: "Luther Burbank", wikipedia_url: "http://en.wikipedia.org/wiki/Luther_Burbank"},
