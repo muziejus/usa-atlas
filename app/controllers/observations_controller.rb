@@ -2,6 +2,7 @@ class ObservationsController < ApplicationController
   autocomplete :place, :name, full: true
 
   def index
+    @observations = Observation.all
   end
   
   def new

@@ -1,4 +1,38 @@
 = provide(:title, "Geographical Observations")
 
-.center.hero-unit
-  Just a little somethin’.
+%table.table.table-hover.table-striped#observations
+  %thead
+    %th
+      Place
+    %th
+      Page
+    %th
+      Order in text
+    %th
+      Chapter
+    %th
+      Dialogue?
+    %th
+      Adjective?
+    %th
+      Not a place?
+  %tbody
+    - @observations.each do |observation|
+      %tr
+        %td
+          = Place.find(observation.place_id).name
+        %td
+          -#= Page.find(observation.page_id).number
+        %td
+          = observation.order_in_page
+        %td
+          -#= Chapter.find(observation.chapter_id).name
+        %td
+          = observation.dialogue
+        %td
+          = observation.adjective
+        %td
+          = observation.not_a_place
+      %tr
+        %td{colspan: 7}
+          = observation.text
