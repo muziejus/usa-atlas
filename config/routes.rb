@@ -5,6 +5,8 @@ UsaAtlas::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root 'welcome#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -15,8 +17,18 @@ UsaAtlas::Application.routes.draw do
     resources :observations, only: :index
   end
   
-#   get '/chapters', to: 'chapters#index', as: 'chapters'
-#   get '/chapters/:name', to: 'chapters#show', as: 'chapter', path: '/chapters/:name'
+  get 'books/the-42nd-parallel' => 'observations#the_42nd_parallel', as: :the_42nd_parallel
+  get 'books/1919' => 'observations#nineteen_nineteen', as: :nineteen_nineteen
+  get 'books/the-big-money' => 'observations#the_big_money', as: :the_big_money
+  
+  get 'books/the-42nd-parallel/chapters' => 'chapters#the_42nd_parallel', as: :the_42nd_parallel_chapters
+  get 'books/1919/chapters' => 'chapters#nineteen_nineteen', as: :nineteen_nineteen_chapters
+  get 'books/the-big-money/chapters' => 'chapters#the_big_money', as: :the_big_money_chapters
+  
+  get 'modes/newsreels' => 'chapters#newsreels', as: :newsreels_chapters
+  get 'modes/narratives' => 'chapters#narratives', as: :narratives_chapters
+  get 'modes/profiles' => 'chapters#profiles', as: :profiles_chapters
+  get 'modes/the-camera-eyes' => 'chapters#camera_eyes', as: :camera_eyes_chapters
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

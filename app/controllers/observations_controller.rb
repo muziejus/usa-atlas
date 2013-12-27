@@ -27,6 +27,18 @@ class ObservationsController < ApplicationController
       end
     end
   end
+  
+  def the_42nd_parallel
+    render 'index'
+  end
+  
+  def nineteen_nineteen
+    render 'index'
+  end
+  
+  def the_big_money
+    render 'index'
+  end
 
   private
     def observation_params

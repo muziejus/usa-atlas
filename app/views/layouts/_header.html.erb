@@ -1,14 +1,83 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "Literary Atlas of U.S.A.", '#', id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Chapters", chapters_path %></li>
-          <li><%= link_to "Observations", observations_path %></li>
-          <li><%= link_to "Add observation", new_observation_path %></li>
-        </ul>
-      </nav>
-    </div>
+<header>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
+      Literary Atlas of <i>U.S.A.</i>
+    <% end %>
   </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <%= link_to chapters_path, class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+          Chapters <b class="caret"></b>
+        <% end %>
+        <ul class="dropdown-menu">
+          <li><%= link_to "All Chapters", chapters_path %>
+          <li class="divider"></li>
+          <li><%= link_to the_42nd_parallel_chapters_path do %>
+            in <i>The 42nd Parallel</i>
+          <% end %>
+          </li>
+          <li><%= link_to nineteen_nineteen_chapters_path do %>
+            in <i>1919</i>
+          <% end %>
+          </li>
+          <li><%= link_to the_big_money_chapters_path do %>
+            in <i>The Big Money</i>
+          <% end %>
+          </li>
+          <li class="divider"></li>
+          <li><%= link_to "Newsreels", newsreels_chapters_path %></li>
+          <li><%= link_to "Camera Eyes", camera_eyes_chapters_path %></li>
+          <li><%= link_to "Narratives", narratives_chapters_path %></li>
+          <li><%= link_to "Profiles", profiles_chapters_path %></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <%= link_to observations_path, class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+          Observations <b class="caret"></b>
+        <% end %>
+        <ul class="dropdown-menu">
+          <li><%= link_to "All Observations (#{Observation.all.count})", observations_path %>
+          <li class="divider"></li>
+          <li><%= link_to the_42nd_parallel_path do %>
+            in <i>The 42nd Parallel</i>
+          <% end %>
+          </li>
+          <li><%= link_to nineteen_nineteen_path do %>
+            in <i>1919</i>
+          <% end %>
+          </li>
+          <li><%= link_to the_big_money_path do %>
+            in <i>The Big Money</i>
+          <% end %>
+          </li>
+          <li class="divider"></li>
+          <li><a href='#'>in Newsreels</a></li>
+          <li><a href='#'>in Camera Eyes</a></li>
+          <li><a href='#'>in Narratives</a></li>
+          <li><a href='#'>in Profiles</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Add observation", new_observation_path %></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
 </header>
