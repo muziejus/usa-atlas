@@ -20,13 +20,13 @@
     - @observations.each do |observation|
       %tr
         %td
-          = Place.find(observation.place_id).name
+          = place_name(observation.place_id)
         %td
-          -#= Page.find(observation.page_id).number
+          = observation.page_number
         %td
           = observation.order_in_page
         %td
-          -#= Chapter.find(observation.chapter_id).name
+          = chapter_name(observation.chapter_id)
         %td
           = observation.dialogue
         %td

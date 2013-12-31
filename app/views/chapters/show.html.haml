@@ -17,9 +17,9 @@
     - @observations.each do |observation|
       %tr
         %td
-          = Place.find(observation.place_id).name
+          = place_name(observation.place_id)
         %td
-          = Page.fine(observation.page_id).number
+          = observation.page_number
         %td
           = observation.text
         %td

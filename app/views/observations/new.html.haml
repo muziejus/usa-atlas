@@ -8,18 +8,18 @@
       %label.control-label
         Mode
       .controls
-        =f.select :mode_id, options_for_select( list_modes, Observation.last.mode_id)
+        =f.select :mode_id, options_for_select( list_modes, last_observation.mode_id)
     .control-group
       = fields_for :page do |page|
         %label.control-label
           Page number
         .controls
-          = page.text_field :number, value: Page.find(Observation.last.page_id).number
+          = page.text_field(:number, value: last_observation.page_number)
     .control-group
       %label.control-label
         Order in page
       .controls
-        = f.text_field :order_in_page, value: Observation.last.order_in_page + 1 unless Observation.last.order_in_page.nil?
+        = f.text_field :order_in_page, value: last_observation.order_in_page + 1
     .control-group
       %label.control-label
         Text
@@ -44,17 +44,17 @@
     .control-group
       .controls
         %label.checkbox
-          = f.check_box :dialogue, value: Observation.last.dialogue
+          = f.check_box :dialogue, value: last_observation.dialogue
           Dialogue?
     .control-group
       .controls
         %label.checkbox
-          = f.check_box :adjective, value: Observation.last.adjective
+          = f.check_box :adjective, value: last_observation.adjective
           Adjective? (like "French puppy")
     .control-group
       .controls
         %label.checkbox
-          = f.check_box :not_a_place, value: Observation.last.not_a_place      
+          = f.check_box :not_a_place, value: last_observation.not_a_place      
           Not a place? (Like USS Lusitania)
     .control-group
       .controls

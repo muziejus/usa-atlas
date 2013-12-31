@@ -9,4 +9,12 @@ module ApplicationHelper
     end
   end
 
+  def chapter_name(id)
+    Chapter.find(id).name unless id.nil?
+  end
+
+  def place_name(id)
+    Place.find(id).name unless id.nil?
+  end
+
 end

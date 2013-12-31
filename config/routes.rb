@@ -36,6 +36,8 @@ UsaAtlas::Application.routes.draw do
   resources :observations do
     get :autocomplete_place_name, :on => :collection
   end
+  
+  resources :places
 
   # Example resource route with options:
   #   resources :products do

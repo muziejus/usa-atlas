@@ -1,0 +1,31 @@
+= provide(:title, "Geographical Places")
+
+%table.table.table-hover.table-striped#places
+  %thead
+    %th
+      Name
+    %th
+      Variants
+    %th
+      Latitude
+    %th
+      Longitude
+    %th
+      Times mentioned
+    %th
+      Notes
+  %tbody
+    - @places.each do |place|
+      %tr
+        %td
+          = place.name
+        %td
+          = place.variants
+        %td
+          = place.latitude
+        %td
+          = place.longitude
+        %td
+          = observations_count(place)
+        %td
+          = place.geocoding_notes
