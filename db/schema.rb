@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230145255) do
+ActiveRecord::Schema.define(version: 20131230221646) do
 
   create_table "books", force: true do |t|
     t.string   "name"
@@ -44,11 +44,9 @@ ActiveRecord::Schema.define(version: 20131230145255) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "place_id"
-    t.string   "place_name"
     t.integer  "page_id",            default: 0
     t.integer  "mode_id",            default: 0
     t.integer  "chapter_id"
-    t.integer  "book_id"
     t.string   "place_name_in_text"
     t.boolean  "adjective",          default: false
     t.boolean  "not_a_place",        default: false
