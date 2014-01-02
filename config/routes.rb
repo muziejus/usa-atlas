@@ -17,7 +17,7 @@ UsaAtlas::Application.routes.draw do
 
   root to: 'ember#start'
 
-  namespace :rails do
+  namespace :railscontroller do
     resources :chapters, only: [:index, :show] do
       resources :observations, only: :index
     end
