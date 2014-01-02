@@ -1,0 +1,11 @@
+<h1>Observed Geographical entities</h1>
+
+<ul>
+  {{#each}}
+    <li>{{#link-to "place" this}}{{name}}{{/link-to}}</li>
+  {{else}}
+    <li>There are no places.</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

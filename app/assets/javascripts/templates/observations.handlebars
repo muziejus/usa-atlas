@@ -1,0 +1,11 @@
+<h1>Geographical Observations</h1>
+
+<ul>
+  {{#each}}
+    <li>{{#link-to "observation" this}}{{text}}{{/link-to}}</li>
+  {{else}}
+    <li>There are no observations.</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

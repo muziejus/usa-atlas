@@ -12,8 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.autocomplete
-//= require autocomplete-rails
 //= require bootstrap
-//= require turbolinks
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require usa_atlas
+
+// for more details see: http://emberjs.com/guides/application/
+UsaAtlas = Ember.Application.create();
+
 //= require_tree .
