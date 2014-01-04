@@ -1,3 +1,4 @@
 class BookSerializer < ActiveModel::Serializer
-  attributes :id, :name, :created_at, :updated_at, :first_page, :last_page
+  attributes :id, :name, :first_page, :last_page
+  has_many :chapters, embed: :ids
 end

@@ -1,3 +1,3 @@
 class ProfileSerializer < ActiveModel::Serializer
-  attributes :id, :historical_name, :created_at, :updated_at, :wikipiedia_url, :chapter_id
+  attributes :id, :historical_name, :wikipedia_url, :chapter_id
 end

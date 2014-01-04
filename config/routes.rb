@@ -2,16 +2,13 @@ UsaAtlas::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :books #, only: [:index, :show]
+      resources :chapters #, only: [:index, :show]
       resources :observations
-      resources :places# do
-#         resources :observations
-#       end
-#       resources :chapters do
-#         resources :places do
-#           resources :observations
-#         end
-#         resources :observations
-#       end
+      resources :places
+      resources :modes #, only: [:index, :show]
+      resources :pages #, only: [:index, :show]
+      resources :profiles #, only: [:index, :show]
     end
   end
 
