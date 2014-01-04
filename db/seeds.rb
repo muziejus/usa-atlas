@@ -19,10 +19,10 @@ modes = Mode.create([
   ])
 
 books = Book.create([
-  {id: 1, name: "U. S. A.", first_page: 1, last_page: 3},
-  {id: 2, name: "The 42nd Parallel", first_page: 11, last_page: 356},
-  {id: 3, name: "1919", first_page: 363, last_page: 761},
-  {id: 4, name: "The Big Money", first_page: 769, last_page: 1240}
+  {id: 1, name: "“U. S. A.”", first_page: 1, last_page: 3},
+  {id: 2, name: "*The 42nd Parallel*", first_page: 11, last_page: 356},
+  {id: 3, name: "*1919*", first_page: 363, last_page: 761},
+  {id: 4, name: "*The Big Money*", first_page: 769, last_page: 1240}
   ])
   
 chapters = Chapter.create([
