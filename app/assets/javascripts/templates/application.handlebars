@@ -1,28 +1,33 @@
 <header>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    {{#link-to "index"}}Literary Atlas of <i>U.S.A.</i>{{/link-to}}
-  </div>
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li>{{#link-to "observations"}}Observations{{/link-to}}</li>
-      <li>{{#link-to "places"}}Places{{/link-to}}</li>
-    <ul class="nav navbar-nav navbar-right">
-      <li>Add observation</li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+  {{partial 'nav'}}
 </header>
 
 <div class="container">
   {{outlet}}
 </div>
+
+<footer class="footer">
+  <small>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+           <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+    </a><br />
+    <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+           Literary Atlas of <em>U.S.A.</em>
+          </span>
+          &copy; 2013–14 by
+          <a xmlns:cc="http://creativecommons.org/ns#" href="http://moacir.com" property="cc:attributionName" rel="cc:attributionURL">
+           Moacir P. de Sá Pereira
+          </a><br />
+          is licensed under a
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+           Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+          </a>
+          .
+  </small>
+  <nav>
+    <ul>
+      <li><a href="https://github.com/muziejus/usa-atlas/">Fork me on GitHub!</a></li>
+      <li>"About"</li>
+    </ul>
+  </nav>
+</footer>

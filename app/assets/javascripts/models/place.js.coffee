@@ -1,7 +1,7 @@
 # for more details see: http://emberjs.com/guides/models/defining-models/
 
 UsaAtlas.Place = DS.Model.extend
-  observation: DS.hasMany 'observation'
+  observation: DS.hasMany 'observation', { async: true }
   name: DS.attr 'string'
   variants: DS.attr 'string'
   geocodingNotes: DS.attr 'string'

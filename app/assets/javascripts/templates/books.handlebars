@@ -1,0 +1,11 @@
+<h1>Books in <i>U.S.A.</i></h1>
+
+<ul>
+  {{#each}}
+    <li>{{#link-to "book" this}}{{italicise name}}{{/link-to}} (first page: {{firstPage}}, last page: {{lastPage}})</li>
+  {{else}}
+    <li>There are no books.</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

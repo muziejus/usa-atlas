@@ -36,7 +36,7 @@ gem 'jquery-rails'
 
 # Install ember & emblem
 gem 'ember-rails'
-gem 'emblem-rails'
+gem 'emblem-rails', git: 'https://github.com/alexspeller/emblem-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

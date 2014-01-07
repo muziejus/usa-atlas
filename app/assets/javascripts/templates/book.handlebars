@@ -1,0 +1,10 @@
+<h1>{{name}}</h1>
+<h2>List of chapters</h2>
+
+<ul>
+  {{#each chapters}}
+    <li>{{#link-to 'chapter' this}}{{name}}{{/link-to}} ({{firstPage}}–{{lastPage}})</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

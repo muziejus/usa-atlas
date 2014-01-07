@@ -1,0 +1,11 @@
+h1 = name
+h2 = subhead
+= outlet
+
+ul
+  each observations
+    li
+      link-to 'chapterObservation' this 
+        = text
+      | place: {{placeData.name}}
+
