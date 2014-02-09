@@ -56,7 +56,8 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+# gem 'debugger', group: [:development, :test]
+# debugger doesn't support ruby 2.1
 
 group :development, :test do
   # Pretty printed test output
