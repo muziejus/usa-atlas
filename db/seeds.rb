@@ -10,11 +10,236 @@ Mode.destroy_all
 Book.destroy_all
 Chapter.destroy_all
 Profile.destroy_all
+Observation.destroy_all
+Page.destroy_all
+Place.destroy_all
+
+pages = Page.create([
+  {id: 1, number: 2, created_at: Time.now, updated_at: Time.now},
+  {id: 2, number: 3, created_at: Time.now, updated_at: Time.now}
+  ])
+
+text_one = "It was not in the long walks through jostling crowds at night that he was less alone, or in the training camp at Allentown, or in the day on the docks at Seattle, or in the empty reek of Washington City hot boyhood summer nights, or in the meal on Market Street, or in the swim off the red rocks at San Diego, or in the bed full of fleas in New Orleans, or in the cold razorwind off the lake, or in the gray faces trempling in the grind of gears in the strett under Michigan Avenue, or in the smokers of limited expresstrains, or walking across country, or riding up the dry mountain canyons, or the night without a sleepingbag among frozen beartracks in the Yellowstone, or canoeing Sundays on the Quinnipiac;"
+
+places = Place.create([
+  {id: 1, name: "Allentown", latitude: -75.477222, longitude: 40.601667, created_at: Time.now, updated_at: Time.now},
+  {id: 2, name: "Seattle", latitude: -122.333056, longitude: 47.609722, created_at: Time.now, updated_at: Time.now},
+  {id: 3, name: "Washington, D. C.", variants: "Washington City", latitude: -77.036667, longitude: 38.895111, created_at: Time.now, updated_at: Time.now},
+  {id: 4, name: "Market Street", latitude: nil, longitude: nil, created_at: Time.now, updated_at: Time.now, geocoding_notes: "Possibly San Francisco. Other options: Philadelphia, St. Louis"},
+  {id: 5, name: "New Orleans", latitude: -90.05, longitude: 29.966667, created_at: Time.now, updated_at: Time.now},
+  {id: 6, name: "Michigan Avenue", variants: "", latitude: -87.62416, longitude: 41.89669, created_at: Time.now, updated_at: Time.now, zoom: 5},
+  {id: 7, name: "Yellowstone National Park", variants: "Yellowstone", latitude: -110.5, longitude: 44.6, created_at: Time.now, updated_at: Time.now, zoom: 8},
+  {id: 8, name: "San Diego", latitude: -117.1625, longitude: 32.715, created_at: Time.now, updated_at: Time.now},
+  {id: 9, name: "Quinnipiac River", variants: "Quinnipiac", latitude: -72.902, longitude: 41.3, created_at: Time.now, updated_at: Time.now, zoom: 5},
+  {id: 10, name: "U.S.A.", variants: "U. S. A.", latitude: -98.579500, longitude: 39.828175, created_at: Time.now, updated_at: Time.now, zoom: 8},
+  {id: 11, name: "Arlington Cemetery", latitude: -77.07, longitude: 38.88, created_at: Time.now, updated_at: Time.now, zoom: 8}
+  ])
+
+observations = Observation.create([
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 1,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Allentown",
+    order_in_page: 1
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 2,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Seattle",
+    order_in_page: 2
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 3,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Washington City",
+    order_in_page: 3
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 4,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Market Street",
+    order_in_page: 4
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 8,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "San Diego",
+    order_in_page: 5
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 5,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "New Orleans",
+    order_in_page: 6
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 6,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Michigan Avenue",
+    order_in_page: 7
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 7,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Yellowstone",
+    order_in_page: 8
+  },
+  {
+    text: text_one,
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 9,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Qunnipiac",
+    order_in_page: 9
+  },
+  {
+    text: "it was speech that clung to the ears, the link that tingled in the blood; U. S. A.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 10
+  },
+  {
+    text: "U. S. A. is the slice of a continent",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 11
+  },
+  {
+    text: "U. S. A. is a group of holding companies, some aggregations of trade unions, a set of laws bound in calf, a radio network, a chain of moving picture theatres, a column of stockquotations rubbed out and written in by a Western Union boy on a blackboard, a publiclibrary full of old newspapers and dogeared history books with protests scrawled on the margins in pencil.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 12
+  },
+  {
+    text: "U. S. A. is the world's greatest rivervalley fringed with mountains and hills, U. S. A. is a set of bigmouthed officials with too many bankaccounts.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 1,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 13
+  },
+  {
+    text: "U. S. A. is the world's greatest rivervalley fringed with mountains and hills, U. S. A. is a set of bigmouthed officials with too many bankaccounts.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 2,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 1
+  },
+  {
+    text: "U. S. A. is a lot of men buried in their uniforms in Arlington Cemetery.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 2,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 2
+  },
+  {
+    text: "U. S. A. is a lot of men buried in their uniforms in Arlington Cemetery.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 11,
+    page_id: 2,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "Arlington Cemetery",
+    order_in_page: 3
+  },
+  {
+    text: "U. S. A. is the letters at the end of an address when you are away from home.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 2,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 4
+  },
+  {
+    text: "But mostly U. S. A. is the speech of the people.",
+    created_at: Time.now,
+    updated_at: Time.now,
+    place_id: 10,
+    page_id: 2,
+    mode_id: 4,
+    chapter_id: 1,
+    place_name_in_text: "U. S. A.",
+    order_in_page: 5
+  }
+  ])
 
 modes = Mode.create([
-  {name: 'Newsreel', id: 1}, 
-  {name: 'Narrative', id: 2}, 
-  {name: 'Camera Eye', id: 3}, 
+  {name: 'Newsreel', id: 1},
+  {name: 'Narrative', id: 2},
+  {name: 'Camera Eye', id: 3},
   {name: 'Profile', id: 4}
   ])
 
@@ -24,7 +249,7 @@ books = Book.create([
   {id: 3, name: "*1919*", first_page: 363, last_page: 761},
   {id: 4, name: "*The Big Money*", first_page: 769, last_page: 1240}
   ])
-  
+
 chapters = Chapter.create([
   {id: 1, name: "U. S. A.", first_page: 1, last_page: 3, mode_id: 4},
   {id: 2, name: "Newsreel I", subhead: "*It was that emancipated race*", first_page: 11, last_page: 13},
@@ -99,7 +324,7 @@ chapters = Chapter.create([
   {id: 71, name: "Newsreel XVIII", subhead: "*Goodby Piccadilly, farewell Leicester Square*", first_page: 303, last_page: 303},
   {id: 72, name: "Eleanor Stoddard", first_page: 304, last_page: 312},
   {id: 73, name: "Newsreel XIX", subhead: "U. S. AT WAR", first_page: 312, last_page: 313},
-  {id: 74, name: "The Camera Eye (27)", subhead: "there were priests and nuns on the *Espagne*", first_page: 313, last_page: 315}, 
+  {id: 74, name: "The Camera Eye (27)", subhead: "there were priests and nuns on the *Espagne*", first_page: 313, last_page: 315},
   {id: 75, name: "Fighting Bob", first_page: 315, last_page: 318, mode_id: 4},
   {id: 76, name: "Charley Anderson", first_page: 318, last_page: 356},
   {id: 77, name: "Newsreel XX", subhead: "*Oh the infantree the infantree*", first_page: 363, last_page: 364},
@@ -119,7 +344,7 @@ chapters = Chapter.create([
   {id: 91, name: "Eveline Hutchins", first_page: 469, last_page: 477},
   {id: 92, name: "Newsreel XXIV", subhead: "it is difficult to realize the colossal scale", first_page: 478, last_page: 479},
   {id: 93, name: "The Camera Eye (32)", subhead: "à quatorze heures precisement", first_page: 479, last_page: 480},
-  {id: 94, name: "The Happy Warrior", first_page: 480, last_page: 485, mode_id: 4}, 
+  {id: 94, name: "The Happy Warrior", first_page: 480, last_page: 485, mode_id: 4},
   {id: 95, name: "The Camera Eye (33)", subhead: "11,000 registered harlots", first_page: 485, last_page: 488},
   {id: 96, name: "Joe Williams", first_page: 488, last_page: 507},
   {id: 97, name: "The Camera Eye (34)", subhead: "his voice was three thousand miles away", first_page: 507, last_page: 509},
@@ -227,7 +452,7 @@ chapters = Chapter.create([
   {id: 199, name: "Mary French", first_page: 1216, last_page: 1238},
   {id: 200, name: "Vag", first_page: 1238, last_page: 1240, mode_id: 4}
   ])
-  
+
 Chapter.where(mode_id: nil).each do |row|
   if row.name =~ /^Newsreel/
     row.mode_id = 1
