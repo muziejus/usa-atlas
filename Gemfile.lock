@@ -206,6 +206,7 @@ DEPENDENCIES
   emblem-rails (>= 0.2.0)
   factory_girl_rails (>= 4.2.1)
   haml-rails (~> 0.4)
+  jquery-rails
   json (~> 1.7.7)
   leaflet-rails
   pg

@@ -11,6 +11,7 @@ gem 'pg', group: :production
 
 # Front end
 gem 'haml-rails', '~> 0.4'
+gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'ember-source', '1.3.2' # production as of 2014.2.9
 gem 'ember-rails'
