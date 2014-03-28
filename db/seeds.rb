@@ -19,7 +19,7 @@ pages = Page.create([
   {id: 2, number: 3, created_at: Time.now, updated_at: Time.now}
   ])
 
-text_one = "It was not in the long walks through jostling crowds at night that he was less alone, or in the training camp at Allentown, or in the day on the docks at Seattle, or in the empty reek of Washington City hot boyhood summer nights, or in the meal on Market Street, or in the swim off the red rocks at San Diego, or in the bed full of fleas in New Orleans, or in the cold razorwind off the lake, or in the gray faces trempling in the grind of gears in the strett under Michigan Avenue, or in the smokers of limited expresstrains, or walking across country, or riding up the dry mountain canyons, or the night without a sleepingbag among frozen beartracks in the Yellowstone, or canoeing Sundays on the Quinnipiac;"
+text_one = "It was not in the long walks through jostling crowds at night that he was less alone, or in the training camp at Allentown, or in the day on the docks at Seattle, or in the empty reek of Washington City hot boyhood summer nights, or in the meal on Market Street, or in the swim off the red rocks at San Diego, or in the bed full of fleas in New Orleans, or in the cold razorwind off the lake, or in the gray faces trempling in the grind of gears in the street under Michigan Avenue, or in the smokers of limited expresstrains, or walking across country, or riding up the dry mountain canyons, or the night without a sleepingbag among frozen beartracks in the Yellowstone, or canoeing Sundays on the Quinnipiac;"
 
 places = Place.create([
   {id: 1, name: "Allentown", latitude: -75.477222, longitude: 40.601667, created_at: Time.now, updated_at: Time.now},
@@ -132,7 +132,7 @@ observations = Observation.create([
     page_id: 1,
     mode_id: 4,
     chapter_id: 1,
-    place_name_in_text: "Qunnipiac",
+    place_name_in_text: "Quinnipiac",
     order_in_page: 9
   },
   {
@@ -147,7 +147,7 @@ observations = Observation.create([
     order_in_page: 10
   },
   {
-    text: "U. S. A. is the slice of a continent",
+    text: "U. S. A. is the slice of a continent.",
     created_at: Time.now,
     updated_at: Time.now,
     place_id: 10,

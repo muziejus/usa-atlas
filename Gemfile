@@ -11,7 +11,7 @@ gem 'pg', group: :production
 
 # Front end
 gem 'haml-rails', '~> 0.4'
-gem 'jquery-rails'
+gem 'jquery-rails', '3.0.3' # Ember views needs JQuery 1.10 or 2.0.
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'ember-source', '1.3.2' # production as of 2014.2.9
 gem 'ember-rails'
