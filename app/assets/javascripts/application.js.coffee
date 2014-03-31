@@ -4,7 +4,6 @@
 #= require handlebars
 #= require ember
 #= require ember-data
-#= require leaflet
 #= require_self
 #= require usa_atlas
 
@@ -12,3 +11,5 @@
 window.UsaAtlas = Ember.Application.create()
 
 #= require_tree .
+
+

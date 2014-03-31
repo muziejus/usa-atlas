@@ -16,7 +16,7 @@ gem 'bootstrap-sass', '~> 3.1.0'
 gem 'ember-source', '1.3.2' # production as of 2014.2.9
 gem 'ember-rails'
 gem 'emblem-rails', '>= 0.2.0' #, git: 'https://github.com/alexspeller/emblem-rails'
-gem 'leaflet-rails'
+#gem 'leaflet-rails'
 
 # Assets
 group :assets do
