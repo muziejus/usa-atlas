@@ -1,6 +1,5 @@
 h1 = name
 h2 = subhead
-= outlet
 
 .row
   .col-md-3
@@ -8,10 +7,11 @@ h2 = subhead
     ul.list-group
       each chapter
         li.list-group-item
-          link-to 'chapter' this | = name
+          link-to 'chapter' this | #{name}
 
           small.muted observations: n
   .col-md-9
+    = outlet
     table.table.table-striped.table-condensed.table-hover
       thead
         tr
