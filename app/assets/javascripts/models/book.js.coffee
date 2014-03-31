@@ -8,7 +8,7 @@ UsaAtlas.Book = DS.Model.extend
   slug: (->
     return @get('id') + "-" + @get('name').toLowerCase().replace(/\W+/g, '-').replace(/^[-]+|[-]$/g, "")
   ).property('id', 'name')
-  
+
 # UsaAtlas.Book.FIXTURES = [
 #   {
 #     id: "1"

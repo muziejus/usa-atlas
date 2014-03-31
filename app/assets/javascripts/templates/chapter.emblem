@@ -2,10 +2,26 @@ h1 = name
 h2 = subhead
 = outlet
 
-ul
-  each observations
-    li
-      link-to 'chapterObservation' this 
-        = text
-      | place: {{placeData.name}}
+.row
+  .col-md-3
+    h2 Chapters
+    ul.list-group
+      each chapter
+        li.list-group-item
+          link-to 'chapter' this | = name
+
+          small.muted observations: n
+  .col-md-9
+    table.table.table-striped.table-condensed.table-hover
+      thead
+        tr
+          th Text
+          th Place
+      tbody
+        each observations
+          tr
+            td
+              link-to 'chapterObservation' this
+                = trimText text placeNameInText
+            td = placeData.name
 
