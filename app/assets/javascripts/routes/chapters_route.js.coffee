@@ -1,4 +1,4 @@
 UsaAtlas.ChaptersRoute = Ember.Route.extend
   model: ->
-#     return @store.all 'chapter'
-    return @store.find 'chapter'
+    UsaAtlas.CachedFindAll 'chapter', @store
+#     @store.find 'chapter'

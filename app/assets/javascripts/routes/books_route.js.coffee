@@ -1,6 +1,4 @@
 UsaAtlas.BooksRoute = Ember.Route.extend
   model: ->
-    return @store.findAll 'book'
-#   setupController: (controller, books) ->
-#     controller.set('model', books)
-    
+    UsaAtlas.CachedFindAll 'book', @store
+#     @store.find 'book'
