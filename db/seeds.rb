@@ -180,7 +180,7 @@ observations = Observation.create([
     order_in_page: 13
   },
   {
-    text: "U. S. A. is the world's greatest rivervalley fringed with mountains and hills, U. S. A. is a set of bigmouthed officials with too many bankaccounts.",
+    text: "U. S. A. is the world's greatest rivervalley fringed with mountains and hills, ~~U. S. A. is a set of bigmouthed officials with too many bankaccounts.",
     created_at: Time.now,
     updated_at: Time.now,
     place_id: 10,

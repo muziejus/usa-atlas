@@ -7,7 +7,6 @@
 #= require_self
 #= require usa_atlas
 
-# for more details see: http://emberjs.com/guides/application/
 window.UsaAtlas = Ember.Application.create()
 
 #= require_tree .
