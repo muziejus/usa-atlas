@@ -1,0 +1,18 @@
+h1 = name
+= outlet
+table.table.table-striped.table-condensed.table-hover
+  thead
+    tr
+      th Text
+      th Page
+      th Chapter
+      th Mode
+  tbody
+    each observations
+      tr
+        td
+          link-to 'placeObservation' this
+            = text
+        td 7
+        td chapter
+        td mode

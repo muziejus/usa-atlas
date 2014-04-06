@@ -7,3 +7,6 @@ UsaAtlas.Place = DS.Model.extend
   geocodingNotes: DS.attr 'string'
   latitude: DS.attr 'number'
   longitude: DS.attr 'number'
+  slug: (->
+    return @get('name').toLowerCase().replace(/\W+/g, '-').replace(/^[-]+|[-]$/g, "")
+  ).property('name')

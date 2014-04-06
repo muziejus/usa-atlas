@@ -1,11 +1,28 @@
 <h1>Observed Geographical entities</h1>
 
-<ul>
+<table class="table table-striped table-condensed table-hover" id="places-table">
+  <th>&nbsp;</th>
+  <th>Place</th>
+  <th>Number of mentions</th>
+  <th>GeoHack</th>
   {{#each}}
-    <li>{{#link-to "place" this}}{{name}}{{/link-to}}</li>
+    <tr>
+      <td>
+        <button type="button" class="btn btn-primary btn-xs">
+          Edit
+        </button>
+      <td>
+        {{#link-to "place" this}}{{name}}{{/link-to}}
+      </td>
+      <td>
+        7
+      </td>
+      <td>
+        GeoHacky stuff here
+      </td>
   {{else}}
-    <li>There are no places.</li>
+    <tr>
+      <td colspan="4">There are no places.</td>
+    </tr>
   {{/each}}
-</ul>
-
-{{outlet}}
+</table>
