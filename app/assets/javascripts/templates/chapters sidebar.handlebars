@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-3">
+    <h2>Chapters</h2>
+      <ul class="list-group">
+        {{#each}}
+          <li class="list-group-item">
+            {{#link-to 'chapter' this}}{{name}}{{/link-to}} <small>({{firstPage}}–{{lastPage}})</small>
+          </li>
+        {{/each}}
+    </ul>
+  </div>
+  <div class="col-md-9">
+    {{outlet}}
+  </div>
+</div>

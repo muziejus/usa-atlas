@@ -1,4 +1,4 @@
-UsaAtlas.ChapterObservationMapView = EmberLeaflet.MapView.extend
+UsaAtlas.ChapterMapView = EmberLeaflet.MapView.extend
   childLayers: [
     UsaAtlas.TileLayer,
     UsaAtlas.MarkerCollectionLayer

@@ -11,6 +11,8 @@ h2 = subhead
 
           small.muted observations: n
   .col-md-9
+    #chapter-map-container
+      = view UsaAtlas.ChapterMapView id="map" zoomBinding="zoom"
     = outlet
     table.table.table-striped.table-condensed.table-hover
       thead
