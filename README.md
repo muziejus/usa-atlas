@@ -1,6 +1,8 @@
 usa-atlas
 =========
 
+# Work on this repository has been suspended and replaced by a new project, [nyscapes/nywalker](http://github.com/nyscapes/nywalker)
+
 This is a Literary Atlas of John Dos Passos’s work *U.S.A*. The idea is to have an application that allows for a full span of geostatistical (and other) investigation into Dos Passos’s work. To that end, the project is split into a handful of steps:
 
 1. *[In Progress]* First, the **structure of the work has to be ported into an MVC** scheme. In *U.S.A.*’s case, this means breaking it apart into books, chapters, and even modes. Books have chapters, but not modes. Modes, however, also have chapters. And chapters have observations. Similarly, modes and books have observations. And *pages* have observations. Oh, and so do places. These sentences already suggest how the models relate to each other, so the key is to get the views (based on Bootstrap) and controllers to play along. In the meantime, did you know there are exactly 200 chapters in *U.S.A.*? Learning is fun!
